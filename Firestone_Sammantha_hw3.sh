@@ -126,16 +126,13 @@ function lazy_commit() {
       done
    declare -p filenames
    declare -p message
-   echo "file names: ${filenames[@]}"
+   echo "file names to be added: ${filenames[@]}"
    echo "commit message: ${message[@]}"
-
+   
    git add "${filenames[@]}"
-   
    git status
-   
    git commit -m "${message[*]}"
-   
-   #git pull
-   #git push
+   git pull origin master
+   git push
 
     }
